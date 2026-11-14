@@ -1,0 +1,93 @@
+"use client";
+
+import { Search, Menu } from "lucide-react";
+import { CategoryBar, type CategoryCount } from "@/components/cybershield/category-bar";
+import { anchorClickHandler } from "@/lib/cyber/scroll";
+import { Input } from "@/components/ui/input";
+
+interface DashboardHeaderProps {
+  query: string;
+  onQueryChange: (value: string) => void;
+  categoryCounts: CategoryCount[];
+  activeCategory: string;
+  onSelectCategory: (categoryId: string) => void;
+  onOpenAbout: () => void;
+  onOpenMobileNav: () => void;
+}
+
+/**
+ * Sticky masthead — Orbitron brand lockup with a gradient wordmark,
+ * instant search and the horizontal category pill strip.
+ */
+export function DashboardHeader({
+  query,
+  onQueryChange,
+  categoryCounts,
+  activeCategory,
+  onSelectCategory,
+  onOpenAbout,
+  onOpenMobileNav,
+}: DashboardHeaderProps) {
+  return (
+    <header className="glass-bar sticky top-0 z-40 w-full border-b border-cyber-border/80">
+      <div className="mx-auto w-full max-w-[1600px] px-3 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between gap-4 sm:h-[4.5rem]">
+          {/* Brand */}
+          <a
+            href="#main-feed"
+            onClick={anchorClickHandler("main-feed")}
+            className="group flex shrink-0 items-center gap-3"
+            aria-label="CyberShield News home"
+          >
+            <span className="relative flex h-3.5 w-3.5">
+              <span className="cyber-ping absolute inline-flex h-3.5 w-3.5 text-cyber-teal opacity-75">
+                <span className="relative inline-flex h-3.5 w-3.5 rounded-full bg-cyber-teal" />
+              </span>
+            </span>
+            <span className="whitespace-nowrap font-display text-[1.02rem] font-black tracking-[0.14em] text-hi sm:text-lg sm:tracking-[0.16em] md:text-[1.55rem]">
+              CYBER<span className="brand-gradient">SHIELD</span>
+            </span>
+            <span className="ml-1 hidden border-l border-cyber-border pl-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-low md:inline-block">
+              NEWS
+            </span>
+          </a>
+
+          {/* Right action cluster */}
+          <div className="flex min-w-0 items-center gap-2 sm:gap-3">
+            <div className="relative w-28 shrink sm:w-56 md:w-80">
+              <Search
+                className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-low"
+                aria-hidden="true"
+              />
+              <Input
+                type="search"
+                value={query}
+                onChange={(event) => onQueryChange(event.target.value)}
+                placeholder="Search threats…"
+                aria-label="Search live article stream"
+                className="h-10 rounded-lg border-cyber-border bg-cyber-surface pl-9 text-[13px] text-hi placeholder:text-low focus-visible:border-cyber-teal focus-visible:ring-cyber-teal/40"
+              />
+            </div>
+
+            <button
+              type="button"
+              onClick={onOpenMobileNav}
+              aria-label="Open categories menu"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-cyber-border bg-cyber-surface text-mid transition-colors hover:border-cyber-teal hover:text-cyber-teal lg:hidden"
+            >
+              <Menu className="h-4.5 w-4.5" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Dedicated category bar */}
+      <CategoryBar
+        counts={categoryCounts}
+        active={activeCategory}
+        onSelect={onSelectCategory}
+        onOpenAbout={onOpenAbout}
+      />
+    </header>
+  );
+}

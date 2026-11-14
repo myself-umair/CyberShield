@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280, initial-scale=1">
+<title>CyberShield — Signal Pipeline</title>
+<link rel="stylesheet" href="global.css">
+<script src="tailwind.js"></script>
+<style>
+  html, body { margin:0; padding:0; width:1280px; height:720px; overflow:hidden; background:var(--bg); }
+  .kicker { font-family:var(--font-num); font-size:11.5px; font-weight:500; letter-spacing:.3em; color:var(--text-dim); }
+  .kdot { width:8px; height:8px; border-radius:50%; background:var(--primary); flex:none; box-shadow:0 0 8px rgba(45,212,191,.8); }
+  .h2 { font-family:var(--font-heading); font-size:42px; font-weight:700; letter-spacing:-.02em; line-height:1.1; color:var(--text); }
+  .step { flex:1; min-width:0; display:flex; flex-direction:column; padding:20px 16px 16px; }
+  .step-num { font-family:var(--font-num); font-size:34px; font-weight:700; line-height:1; color:var(--primary); }
+  .step-ic { width:42px; height:42px; border-radius:11px; background:var(--primary-soft); border:1px solid var(--line);
+             display:flex; align-items:center; justify-content:center; margin-top:14px; }
+  .step-ic .material-icons { font-size:22px; color:var(--primary); }
+  .step-name { font-family:var(--font-heading); font-size:16.5px; font-weight:700; letter-spacing:.05em; color:var(--text); margin-top:13px; white-space:nowrap; }
+  .step-copy { font-size:12.5px; line-height:1.52; color:var(--text-dim); margin-top:8px; }
+  .step-copy .n { font-family:var(--font-num); color:var(--text); font-weight:500; font-size:.95em; }
+  .step-foot { margin-top:auto; padding-top:10px; border-top:1px solid var(--line-soft);
+               font-family:var(--font-num); font-size:10px; font-weight:500; letter-spacing:.14em; color:var(--primary); white-space:nowrap; }
+  .conn { width:16px; flex:none; align-self:flex-start; margin-top:87px; height:2px;
+          background:linear-gradient(90deg, rgba(45,212,191,.9), rgba(45,212,191,.12)); }
+  .strip { font-family:var(--font-num); font-size:11px; letter-spacing:.2em; color:var(--text-dim); }
+  .strip .sl { color:var(--primary); font-weight:700; }
+</style>
+</head>
+<body>
+<section class="slide scanlines">
+  <div data-decor aria-hidden="true" class="absolute" style="left:-160px; top:-200px; width:540px; height:540px; border-radius:50%; background:radial-gradient(circle, rgba(45,212,191,.09), transparent 62%);"></div>
+
+  <div class="absolute inset-0 flex flex-col" style="padding:56px 60px 48px;">
+    <!-- header -->
+    <div class="flex items-center" style="gap:12px;">
+      <span class="kdot"></span>
+      <span class="kicker">HOW A SIGNAL FLOWS</span>
+    </div>
+    <h2 class="h2" style="margin-top:14px;">Source to screen in <span style="color:var(--primary);">five moves.</span></h2>
+
+    <!-- steps -->
+    <div class="flex-1 flex items-center" style="min-height:0;">
+      <div class="w-full flex items-stretch">
+        <div class="card-glow step">
+          <div class="step-num">01</div>
+          <div class="step-ic"><span class="material-icons">rss_feed</span></div>
+          <div class="step-name">INGEST</div>
+          <p class="step-copy"><span class="n">19</span> RSS/Atom streams — The Hacker News, Krebs, BleepingComputer, CISA Advisories, Unit 42 and more — pulled server-side.</p>
+          <div class="step-foot">19/19 ONLINE</div>
+        </div>
+        <div class="conn" aria-hidden="true"></div>
+        <div class="card-glow step">
+          <div class="step-num">02</div>
+          <div class="step-ic"><span class="material-icons">merge_type</span></div>
+          <div class="step-name">NORMALIZE</div>
+          <p class="step-copy">Titles, summaries and timestamps cleaned, deduped and merged into one canonical stream.</p>
+          <div class="step-foot">SINGLE FEED</div>
+        </div>
+        <div class="conn" aria-hidden="true"></div>
+        <div class="card-glow step">
+          <div class="step-num">03</div>
+          <div class="step-ic"><span class="material-icons">hub</span></div>
+          <div class="step-name">ENRICH</div>
+          <p class="step-copy">On-device NLP extracts CVE IDs, threat orgs, tags and read time for every article.</p>
+          <div class="step-foot">34 CVE-TAGGED TODAY</div>
+        </div>
+        <div class="conn" aria-hidden="true"></div>
+        <div class="card-glow step">
+          <div class="step-num">04</div>
+          <div class="step-ic"><span class="material-icons">speed</span></div>
+          <div class="step-name">SCORE</div>
+          <p class="step-copy">A <span class="n">0–100</span> engine weighs CISA KEV membership, CVSS, exploit age, source reliability and recency.</p>
+          <div class="step-foot">TOP TODAY: 100/100</div>
+        </div>
+        <div class="conn" aria-hidden="true"></div>
+        <div class="card-glow step">
+          <div class="step-num">05</div>
+          <div class="step-ic"><span class="material-icons">dashboard</span></div>
+          <div class="step-name">RANK &amp; RENDER</div>
+          <p class="step-copy">Ranked JSON over <span class="n">5</span> API endpoints renders the wall, gauge and board you saw.</p>
+          <div class="step-foot">12-MIN FRESHNESS</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- bottom strip -->
+    <div class="flex items-center justify-center" style="border:1px solid var(--line-soft); background:var(--surface); border-radius:10px; padding:13px 18px;">
+      <span class="strip"><span class="sl">//</span>&nbsp; NO EXTERNAL AI KEYS REQUIRED TO RUN&nbsp;·&nbsp;OFFLINE FALLBACK BUILT IN</span>
+    </div>
+  </div>
+</section>
+</body>
+</html>
