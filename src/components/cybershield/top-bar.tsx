@@ -37,7 +37,7 @@ export function TopBar({ onlineCount, nextSyncAt, onOpenAbout }: TopBarProps) {
           <SystemClock className="hidden text-[10px] text-mid sm:flex" />
           <span className="hidden h-3 w-px bg-cyber-border sm:block" aria-hidden="true" />
           <span
-            className="hidden shrink-0 items-center gap-1.5 truncate font-semibold text-cyber-green sm:flex"
+            className="hidden shrink-0 items-center gap-1.5 whitespace-nowrap font-semibold text-cyber-green sm:flex"
             title="Research streams confirmed online this cycle"
           >
             <span className="cyber-ping relative inline-flex h-1.5 w-1.5 text-cyber-green">

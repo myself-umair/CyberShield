@@ -198,8 +198,8 @@ function ThreatConditionCard({
         <span className="digital text-[9px] tracking-widest text-low">LIVE COMPUTED</span>
       </header>
 
-      <div className="relative mx-auto mt-2 w-full max-w-[230px] px-5">
-        <svg viewBox="0 0 120 68" className="w-full" role="img" aria-label={`Threat condition ${condition.level.label}, score ${condition.score} of 100`}>
+      <div className="mx-auto mt-2 w-full max-w-[230px] px-5">
+        <svg viewBox="0 0 120 66" className="w-full" role="img" aria-label={`Threat condition ${condition.level.label}, score ${condition.score} of 100`}>
           {/* track */}
           <path
             d="M 10 60 A 50 50 0 0 1 110 60"
@@ -234,7 +234,7 @@ function ThreatConditionCard({
           />
           <circle cx="60" cy="60" r="4.5" className="fill-hi" />
         </svg>
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 text-center">
+        <div className="mt-1 text-center">
           <span className={cn("font-display text-lg font-black tracking-widest", condition.level.glow)}>
             {condition.level.label}
           </span>
