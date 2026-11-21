@@ -2,7 +2,7 @@
 
 <img src="/assets/CyberShield-Banner.png" alt="CYBERSHIELD — glowing white-blue-green pixel banner" width="88%"/>
 
-**LIVE THREAT INTELLIGENCE — a real-time SOC dashboard that fuses 20+ cybersecurity
+**LIVE THREAT INTELLIGENCE — a real-time SOC dashboard that fuses 19 cybersecurity
 research streams with the official CISA Known Exploited Vulnerabilities catalog,
 rendered as a glassmorphic mission-control HUD with three complete skins.**
 
@@ -76,7 +76,7 @@ rendered as a glassmorphic mission-control HUD with three complete skins.**
 CYBERSHIELD is a **real-time cyber threat intelligence dashboard** that turns the firehose
 of the security internet into one disciplined, live mission-control view. Open the app and it:
 
-1. **Aggregates 20+ cybersecurity research streams** — BleepingComputer, The Hacker News,
+1. **Aggregates 19 cybersecurity research streams** — BleepingComputer, The Hacker News,
    Krebs on Security, SecurityWeek, Threatpost, The Record, CISA alerts and more — into a
    single ranked signal stream with dedupe, severity scoring and category tagging, and
 2. **Fuses the official CISA Known Exploited Vulnerabilities (KEV) catalog** into live
@@ -95,7 +95,7 @@ server-side aggregation and caching, so the browser never scrapes and the UI nev
 ## ✨ Features
 
 ### 📡 Live Intelligence
-- **20+ research streams, one signal** — server-side RSS/Atom/JSON aggregation with normalised
+- **19 research streams, one signal** — server-side RSS/Atom/JSON aggregation with normalised
   titles, source attribution, relative timestamps and per-article severity (CRITICAL / HIGH /
   ELEVATED / MODERATE / WATCH) derived from content heuristics and KEV cross-matching.
 - **CISA KEV fusion** — the official Known Exploited Vulnerabilities catalog powers the
